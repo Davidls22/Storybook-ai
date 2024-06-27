@@ -18,7 +18,7 @@ const CreateStory = () => {
     if (form.prompt) {
       try {
         setGeneratingText(true);
-        const response = await fetch("http://localhost:8080/api/v1/ai/generate-text", {
+        const response = await fetch("https://storybook-ai.onrender.com/api/v1/ai/generate-text", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const CreateStory = () => {
     if (form.prompt && generatedText) {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:8080/api/v1/post", {
+        const response = await fetch("https://storybook-ai.onrender.com/api/v1/post", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
